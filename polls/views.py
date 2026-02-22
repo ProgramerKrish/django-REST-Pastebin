@@ -5,8 +5,15 @@ from django.shortcuts import get_object_or_404
 import json
 # Create your views here.
 def index(request):
-    questions=get_object_or_404( Question)
-
+    try:
+        questions=Question.objects.all()
+    except Exception as e:
+        return JsonResponse(
+                {
+                    "error":"failed to fetch Questions"},
+                
+                status=500
+             )   
     data={
         "questions":[{
             "question_id":q.id,
