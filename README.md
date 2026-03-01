@@ -16,3 +16,4 @@ from snippets.models import Snippet
 >>> content
 b'{"id":2,"title":"","code":"print(\\"hello, world\\")\\n","language":"python","style":"friendly"}'
 >>> exit()
+>>>explored more
